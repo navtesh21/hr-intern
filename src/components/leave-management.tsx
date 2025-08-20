@@ -108,9 +108,9 @@ export function LeaveManagement() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ status: "REJECTED" }),
+        body: JSON.stringify({ status: "REJECTED" ,reviewedBy: "admin", comments: "Approved by Admin"}),
       })
-
+      console.log("Rejecting leave request:", response)
       if (!response.ok) {
         throw new Error("Failed to reject leave request")
       }
